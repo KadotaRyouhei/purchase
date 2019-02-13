@@ -10,6 +10,19 @@
         where id=#{id}
     </select>
 
+    <!--加库存-->
+    <update id="addProduct">
+        update t_product set stock = stock + #{stock}
+        where id = #{id}
+    </update>
+
+    <!--新增库存-->
+    <insert id="insertProduct" parameterType="product">
+        insert into t_product(
+        product_name,stock, price, version, note
+        ) values(#{productName}, #{stock}, #{price}, #{version},#{note})
+    </insert>
+
     <!--减库存-->
     <update id="decreaseProduct">
         update t_product set stock = stock - #{quantity}

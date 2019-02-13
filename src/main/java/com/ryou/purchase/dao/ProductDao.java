@@ -8,6 +8,10 @@ import org.apache.ibatis.annotations.Param;
 public interface ProductDao {
     public ProductPo getProduct(Long id);
 
+    public int addProduct(ProductPo po);
+
+    public int insertProduct(ProductPo po);
+
     public int decreaseProduct(@Param("id") Long id,
                                @Param("quantity") int quantity);
 }

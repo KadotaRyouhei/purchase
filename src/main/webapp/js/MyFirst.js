@@ -5,7 +5,24 @@ function myFirst()
 
 function addPro()
 {
-    document.getElementById("pro").innerHTML="商品数量+1";
+    var params = {
+        productId : 1
+    };
+    $.post("./addpro",params,function(result){
+        alert(result.message);
+    });
+}
+
+function fastBuyPro()
+{
+    var params = {
+        userId : 1,
+        productId : 1,
+        quantity : 2
+    };
+    $.post("./purchase",params,function(result){
+        alert(result.message);
+    });
 }
 
 

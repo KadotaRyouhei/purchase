@@ -1,5 +1,6 @@
 package com.ryou.purchase.controller;
 
+import com.ryou.purchase.service.AddProductService;
 import com.ryou.purchase.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,9 @@ public class PurchaseController {
     @Autowired
     PurchaseService purchaseService = null;
 
+    @Autowired
+    AddProductService addProductService = null;
+
     @GetMapping("/test")
     public ModelAndView testPage() {
         ModelAndView mv = new ModelAndView("test");
@@ -23,6 +27,14 @@ public class PurchaseController {
     public Result purchase(Long userId, Long productId, Integer quantity) {
         boolean success = purchaseService.purchase(userId, productId, quantity);
         String message = success ? "抢购成功" : "抢购失败";
+        Result result = new Result(success,message);
+        return result;
+    }
+
+    @PostMapping("/addpro")
+    public Result addProduct(Long productId){
+        boolean success = addProductService.addProduct(productId);
+        String message = success ? "添加成功" : "添加失败";
         Result result = new Result(success,message);
         return result;
     }
