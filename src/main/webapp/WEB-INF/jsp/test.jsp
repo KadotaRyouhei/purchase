@@ -19,22 +19,7 @@
 <button onclick="myFirst()">见证奇迹</button><br/>
 <button onclick="addPro()">添加产品</button>
 <button onclick="fastBuyPro()">抢购产品</button>
-<div>
-    <button onclick="myFirst()">测试一</button><br/>
-    <button onclick="addPro()">测试二</button>
-    <button onclick="fastBuyPro()">测试三</button><br/>
-    <p class="p1"> 测试段落一</p>
 
-</div>
-<div class="wrapper-double-float" id="wrapper">
-    <div class="left" >
-        左边固定宽度，高度不固定 </br> </br></br></br>高度有可能会很小，也可能很大。
-    </div>
-    <div class="right" >
-        这里的内容可能比左侧高，也可能比左侧低。宽度需要自适应。</br>
-        基本的样式是，两个div相距20px, 左侧div宽 120px
-    </div>
-</div>
 <div class="divsuntitle">
     <img class="suntitle" src="images/sunglasses.png" alt="太阳镜标题">
     <button class="btntitle">网络请求调试</button>
